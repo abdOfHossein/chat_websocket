@@ -6,29 +6,77 @@
   box-shadow: 10px 10px 30px;
   border-radius: 10px;
   position: relative;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
 }
 .content-all-msg {
-  width: 100%;
-  height: 450px;
-  position: absolute;
-  top: 0px;
+  width: 97%;
+  height: 470px;
   overflow: auto;
+  background-color: white;
+  margin: 10px;
+  border-radius: 5px;
 }
-.content-input-msg {
+.content-input-btn-msg{
   width: 100%;
   height: 100px;
-  margin: 7px;
-  position: absolute;
-  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-.input-msg {
+.content-input-msg {
   width: 500px;
+  height: 100px;
+  margin: 7px;
+
+}
+
+.input-msg {
+  width: 100%;
   height: 100%;
   border-style: hidden;
+  border-radius: 5px;
+}
+.content-btn {
+  width: 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 .submit-msg {
-  width: 80px;
-  height: 100%;
+  width: 90px;
+  height: 45%;
   background-color: rgb(54, 224, 20);
   border-radius: 5px;
+}
+.clear-msg {
+  width: 90px;
+  height: 45%;
+  background-color: orange;
+  border-radius: 5px;
+}
+.bg-img {
+  width: 100%;
+  height: 100%;
+}
+.content-bg-img {
+  position: absolute;
+  z-index: -1;
+}
+body {
+  background-image: url('nody-عکس-پس-زمینه-صفحه-چت-تلگرام-1633956626.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.message {
+  list-style-type: none;
 }

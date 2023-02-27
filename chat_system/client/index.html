@@ -6,17 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chat</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="./style-chat.css">
+    <link rel="stylesheet" href="./style-chat.css" />
   </head>
   <body>
     <div class="counteiner">
       <div class="content-all-msg">
-        <ul id="messages">
-        </ul>
+        <ul class="message" id="messages"></ul>
       </div>
-      <div class="content-input-msg">
-        <input class="input-msg" id="message" type="text" />
-        <button class="submit-msg" id="submit">Submit</button>
+      <div class="content-input-btn-msg">
+        <div class="content-input-msg">
+          <input class="input-msg" id="message" type="text" />
+        </div>
+        <div class="content-btn">
+          <button class="clear-msg">Clear</button>
+          <button class="submit-msg" id="submit">Submit</button>
+        </div>
       </div>
     </div>
   </body>
