@@ -1,0 +1,34 @@
+.counteiner {
+  width: 600px;
+  height: 600px;
+  margin: 150px auto 0;
+  border: 3px solid rgb(87, 85, 85);
+  box-shadow: 10px 10px 30px;
+  border-radius: 10px;
+  position: relative;
+}
+.content-all-msg {
+  width: 100%;
+  height: 450px;
+  position: absolute;
+  top: 0px;
+  overflow: auto;
+}
+.content-input-msg {
+  width: 100%;
+  height: 100px;
+  margin: 7px;
+  position: absolute;
+  bottom: 0;
+}
+.input-msg {
+  width: 500px;
+  height: 100%;
+  border-style: hidden;
+}
+.submit-msg {
+  width: 80px;
+  height: 100%;
+  background-color: rgb(54, 224, 20);
+  border-radius: 5px;
+}
