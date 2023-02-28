@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8" height="10" viewBox="0 0 8 10">
+  <defs>
+    <clipPath id="clip-path">
+      <rect y="5" width="8" height="10" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_110" data-name="Group 110" transform="translate(4)">
+    <g id="Scroll_Group_1" data-name="Scroll Group 1" transform="translate(-4 -5)" clip-path="url(#clip-path)" style="isolation: isolate">
+      <g id="Group_109" data-name="Group 109">
+        <text id="_" data-name="+" transform="translate(8 13)" fill="#8d8d8e" font-size="12" font-family="SegoeUI-Light, Segoe UI" font-weight="300" letter-spacing="-0.065em"><tspan x="-7.799" y="0">+</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>خانه</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body dir="rtl">
+    <header class="header">
+      <div class="header-right">
+        <button class="header-menu-btn"></button>
+
+        <div class="header-logo-box">
+          <img src="assets/image/logo.png" alt="Logo" class="logo" />
+        </div>
+        <div class="header-other">
+          <div class="header-project-control">
+            <div class="header-project-name">جادو</div>
+            <div class="header-project-more-menu">
+              <img src="assets/image/icons/down-arrow.png" style="width: 1.7rem" />
+            </div>
+            <div class="header-project-star">
+              <img class="header-project-star-image" src="assets/image/icons/star.png" style="width: 1.7rem" />
+            </div>
+          </div>
+          <div class="header-tab-menu">
+            <div class="header-tab-menu-item">
+              <span>لیست</span>
+            </div>
+            <div class="header-tab-menu-item">
+              <span>بردها</span>
+            </div>
+            <div class="header-tab-menu-item">
+              <span>خط زمانی</span>
+            </div>
+            <div class="header-tab-menu-item">
+              <span>تقویم</span>
+            </div>
+            <div class="header-tab-menu-item">
+              <span>فایل ها</span>
+            </div>
+            <div class="header-tab-menu-item">
+              <span>پیام ها</span>
+            </div>
+            <div class="header-tab-menu-item">
+              <span>رخداد ها</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-left">
+        <div class="header-left-profile">
+          <div class="header-left-profile-image">
+            <img src="assets/image/user.png" onload="show_image(this)" />
+          </div>
+          <div class="header-left-profile-short-name u-d-none">
+            <span>ع</span>
+            <span>م</span>
+          </div>
+          <div>
+            <input type="hidden" name="current-user-id" value="1" />
+          </div>
+        </div>
+        <div class="header-left-search">
+          <div class="header-left-search-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+            </svg>
+          </div>
+          <input class="header-left-search-input u-border-0 u-outline-0" onfocus="this.placeholder=''" onblur="this.placeholder='جستجو'" placeholder="جستجو" />
+        </div>
+        <div class="header-left-splitter"></div>
+        <div class="header-left-add-new-person">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+            <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"></path>
+            <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"></path>
+          </svg>
+          <span class="header-left-add-new-person-title">افزودن</span>
+        </div>
+        <div class="header-left-members">
+          <div class="header-left-members-item">
+            <div class="header-left-profile-image">
+              <img src="assets/image/user.png" onload="show_image(this)" />
+            </div>
+            <div class="header-left-profile-short-name u-d-none">
+              <span>ع</span>
+              <span>م</span>
+            </div>
+            <div>
+              <input type="hidden" name="current-user-id" value="1" />
+            </div>
+          </div>
+
+          <div class="header-left-members-item">
+            <div class="header-left-profile-image">
+              <img src="assets/image/user.png" onload="show_image(this)" />
+            </div>
+            <div class="header-left-profile-short-name u-d-none">
+              <span>ع</span>
+              <span>م</span>
+            </div>
+            <div>
+              <input type="hidden" name="current-user-id" value="1" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="two" style="width: 100%; top: 0; left: 0; height: 100%; background-color: white">
+      <div style="width: 50%; height: 100%; border-right: 1px solid rgb(238, 238, 238); float: left">
+        <div class="list-details">
+          <div class="list-details-header">
+            <div class="list-details-header-status">
+              <span>انجام شده است</span>
+              <span class="u-span-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check2 btn-svg" viewBox="0 0 16 16">
+                  <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                </svg>
+              </span>
+            </div>
+            <div class="list-details-header-icon">
+              <span>
+                <img src="assets/image/icons/hand sape - fill-yellow.png" class="btn-svg" alt="" />
+              </span>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-paperclip btn-svg" viewBox="0 0 16 16">
+                  <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z" />
+                </svg>
+              </span>
+              <span>
+                <img src="assets/image/icons/arrow-90deg-down.png" class="btn-svg" alt="" />
+              </span>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-link-45deg btn-svg" viewBox="0 0 16 16">
+                  <path d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z" />
+                  <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 0 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 0 0-4.243-4.243L6.586 4.672z" />
+                </svg>
+              </span>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="btn-svg" viewBox="0 0 18.073 23">
+                  <path
+                    id="arrow-bar-left"
+                    d="M20.821,24.786A.821.821,0,0,1,20,23.964V2.607a.821.821,0,1,1,1.643,0V23.964A.821.821,0,0,1,20.821,24.786Zm-4.107-11.5a.821.821,0,0,1-.821.821H6.376L9.9,17.633A.822.822,0,1,1,8.74,18.8L3.811,13.867a.821.821,0,0,1,0-1.163L8.74,7.776A.822.822,0,0,1,9.9,8.939L6.376,12.464h9.517A.821.821,0,0,1,16.714,13.286Z"
+                    transform="translate(-3.57 -1.786)"
+                    fill="#6f7782"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div class="list-details-body">
+            <div class="list-details-info">
+              <ul class="list-details-info-items">
+                <h3 class="list-details-info-item-title">هماهنگی اتاق جلسات</h3>
+
+                <li class="list-details-info-item">
+                  <div class="list-details-info-item-responsible">
+                    <span>مسئول</span>
+                  </div>
+                  <div class="list-details-info-item-responsible-name">
+                    <div class="list-item-user u-d-flex u-align-items-center u-border-0">
+                      <div class="header-left-profile header-left-profile-small">
+                        <div class="header-left-profile-image header-left-profile-image-small">
+                          <img src="assets/image/user.png" onload="show_image(this)" />
+                        </div>
+                        <div class="header-left-profile-short-name u-d-none">
+                          <span>ع</span>
+                          <span>م</span>
+                        </div>
+                        <div>
+                          <input type="hidden" name="current-user-id" value="1" />
+                        </div>
+                      </div>
+                      <div class="list-item-user-name" style="margin-right: 1rem">
+                        <span>عارف محمدی</span>
+                      </div>
+                    </div>
+                    <div class="list-item-date u-border-0"></div>
+                  </div>
+                </li>
+
+                <li class="list-details-info-item">
+                  <div class="list-details-info-item-date">
+                    <span>موعد انجام</span>
+                  </div>
+                  <div class="list-details-info-item-date-name">
+                    <span class="u-span-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-calendar2-event btn-svg" viewBox="0 0 16 16">
+                        <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                        <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                      </svg>
+                    </span>
+                    <span style="margin-right: 1rem">دوشنبه</span>
+                  </div>
+                </li>
+
+                <li class="list-details-info-item">
+                  <div class="list-details-info-item-section">
+                    <span>بخش</span>
+                  </div>
+                  <div class="list-details-info-item-section-name">
+                    <span>
+                      <span>در حال انجام</span>
+                    </span>
+                  </div>
+                </li>
+
+                <li class="list-details-info-item">
+                  <div class="list-details-info-item-tags">
+                    <span>برچسب</span>
+                  </div>
+                  <div class="list-details-info-item-tags-name">
+                    <span style="display: flex; align-items: center">
+                      <span style="margin-left: 0.5rem">داخلی</span>
+                      <span class="u-span-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x btn-svg" style="transform: rotate(45deg); margin-right: 0.2rem" viewBox="0 0 16 16">
+                          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                </li>
+
+                <li class="list-details-info-item">
+                  <div class="list-details-info-item-description">
+                    <span>توضیح</span>
+                  </div>
+                  <div class="list-details-info-item-description-name">
+                    <p>اطلاعات بیشتری به این کار اضافه کنید ...</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="list list-details-sub">
+              <span class="list-details-sub-title">زیرکارها</span>
+              <ul class="list-items">
+                <li class="list-item u-border-top-1">
+                  <div class="list-item-right">
+                    <h3 class="list-item-title">
+                      <span class="list-item-title-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check-circle btn-svg" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                          <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                        </svg>
+                      </span>
+                      <span>هماهنگی اتاق جلسات</span>
+                    </h3>
+                  </div>
+                </li>
+                <li class="list-item u-border-top-1">
+                  <div class="list-item-right">
+                    <h3 class="list-item-title">
+                      <span class="list-item-title-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check-circle btn-svg" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                          <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                        </svg>
+                      </span>
+                      <span>هماهنگی اتاق جلسات</span>
+                    </h3>
+                  </div>
+                </li>
+                <li class="list-item u-border-top-1">
+                  <div class="list-item-right">
+                    <h3 class="list-item-title">
+                      <span class="list-item-title-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check-circle btn-svg" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                          <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                        </svg>
+                      </span>
+                      <span>هماهنگی اتاق جلسات</span>
+                    </h3>
+                  </div>
+                </li>
+                <li class="list-item u-border-top-1">
+                  <div class="list-item-right">
+                    <h3 class="list-item-title">
+                      <span class="list-item-title-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check-circle btn-svg" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                          <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                        </svg>
+                      </span>
+                      <span>هماهنگی اتاق جلسات</span>
+                    </h3>
+                  </div>
+                </li>
+              </ul>
+              <div class="list-item-add" style="padding-right: 0">
+                <span class="list-item-add-icon" style="margin-right: 0">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x btn-svg" style="transform: rotate(45deg); margin-right: 0.2rem" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                  </svg>
+                </span>
+                <span class="list-item-add-title">افزودن زیرکار ...</span>
+              </div>
+            </div>
+
+            <div class="list list-details-files">
+              <div class="" data-file-type="image">ima</div>
+              <div class="" data-file-type="voice">
+                <div class="list-details-file-icon">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-file-earmark-word btn-svg" viewBox="0 0 16 16">
+                      <path d="M5.485 6.879a.5.5 0 1 0-.97.242l1.5 6a.5.5 0 0 0 .967.01L8 9.402l1.018 3.73a.5.5 0 0 0 .967-.01l1.5-6a.5.5 0 0 0-.97-.242l-1.036 4.144-.997-3.655a.5.5 0 0 0-.964 0l-.997 3.655L5.485 6.88z" />
+                      <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="list-details-file-name">
+                  <span> DreamWorks.Dragons.S01E02.Www.DownLoadSpeed.IR.mkv </span>
+                </div>
+              </div>
+              <div class="" data-file-type="film">fim</div>
+              <div class="list-details-files-add-btn">
+                <span class="list-item-add-icon" style="margin-right: 0">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x btn-svg" style="transform: rotate(45deg); margin-right: 0.2rem" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <div class="list list-details-chat">
+              <div class="list-details-chat-content">
+                <div class="list-details-chat-content-image">
+                  <div class="list-item-user u-d-flex u-align-items-center u-border-0">
+                    <div class="header-left-profile header-left-profile-small">
+                      <div class="header-left-profile-image">
+                        <img src="assets/image/user.png" onload="show_image(this)" />
+                      </div>
+                      <div class="header-left-profile-short-name u-d-none">
+                        <span>ع</span>
+                        <span>م</span>
+                      </div>
+                      <div>
+                        <input type="hidden" name="current-user-id" value="1" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-item-date u-border-0"></div>
+                </div>
+                <div class="list-details-chat-contents">
+                  <div>
+                    <span class="list-details-chat-contents-user-name">علی مزینی</span>
+                    <span class="list-details-chat-contents-date">3 روز قبل</span>
+                  </div>
+                  <div class="list-details-chat-contents-file">
+                    <div class="list list-details-files">
+                      <div class="" data-file-type="voice">
+                        <div class="list-details-file-icon">
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-file-earmark-word btn-svg" viewBox="0 0 16 16">
+                              <path d="M5.485 6.879a.5.5 0 1 0-.97.242l1.5 6a.5.5 0 0 0 .967.01L8 9.402l1.018 3.73a.5.5 0 0 0 .967-.01l1.5-6a.5.5 0 0 0-.97-.242l-1.036 4.144-.997-3.655a.5.5 0 0 0-.964 0l-.997 3.655L5.485 6.88z" />
+                              <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z" />
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="list-details-file-name">
+                          <span> DreamWorks.Dragons.S01E02.Www.DownLoadSpeed.IR.mkv </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-details-chat-content-like">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stickies" viewBox="0 0 16 16">
+                      <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5V13a1 1 0 0 0 1 1V1.5a.5.5 0 0 1 .5-.5H14a1 1 0 0 0-1-1H1.5z" />
+                      <path
+                        d="M3.5 2A1.5 1.5 0 0 0 2 3.5v11A1.5 1.5 0 0 0 3.5 16h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 16 9.586V3.5A1.5 1.5 0 0 0 14.5 2h-11zM3 3.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5V9h-4.5A1.5 1.5 0 0 0 9 10.5V15H3.5a.5.5 0 0 1-.5-.5v-11zm7 11.293V10.5a.5.5 0 0 1 .5-.5h4.293L10 14.793z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="list-details-chat-content">
+                <div class="list-details-chat-content-image">
+                  <div class="list-item-user u-d-flex u-align-items-center u-border-0">
+                    <div class="header-left-profile header-left-profile-small">
+                      <div class="header-left-profile-image">
+                        <img src="assets/image/user.png" onload="show_image(this)" />
+                      </div>
+                      <div class="header-left-profile-short-name u-d-none">
+                        <span>ع</span>
+                        <span>م</span>
+                      </div>
+                      <div>
+                        <input type="hidden" name="current-user-id" value="1" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-item-date u-border-0"></div>
+                </div>
+                <div class="list-details-chat-contents">
+                  <div>
+                    <span class="list-details-chat-contents-user-name">علی مزینی</span>
+                    <span class="list-details-chat-contents-date">3 روز قبل</span>
+                  </div>
+                  <div class="list-details-chat-contents-file">
+                    <div class="list list-details-files">
+                      <div class="" data-file-type="voice">
+                        <div class="list-details-file-icon">
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-file-earmark-word btn-svg" viewBox="0 0 16 16">
+                              <path d="M5.485 6.879a.5.5 0 1 0-.97.242l1.5 6a.5.5 0 0 0 .967.01L8 9.402l1.018 3.73a.5.5 0 0 0 .967-.01l1.5-6a.5.5 0 0 0-.97-.242l-1.036 4.144-.997-3.655a.5.5 0 0 0-.964 0l-.997 3.655L5.485 6.88z" />
+                              <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z" />
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="list-details-file-name">
+                          <span> DreamWorks.Dragons.S01E02.Www.DownLoadSpeed.IR.mkv </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-details-chat-content-like">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stickies" viewBox="0 0 16 16">
+                      <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5V13a1 1 0 0 0 1 1V1.5a.5.5 0 0 1 .5-.5H14a1 1 0 0 0-1-1H1.5z" />
+                      <path
+                        d="M3.5 2A1.5 1.5 0 0 0 2 3.5v11A1.5 1.5 0 0 0 3.5 16h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 16 9.586V3.5A1.5 1.5 0 0 0 14.5 2h-11zM3 3.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5V9h-4.5A1.5 1.5 0 0 0 9 10.5V15H3.5a.5.5 0 0 1-.5-.5v-11zm7 11.293V10.5a.5.5 0 0 1 .5-.5h4.293L10 14.793z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="list-details-footer">
+            <div class="list-details-footer-chat">
+              <div class="list-details-footer-chat-user-image">
+                <div class="list-item-user u-d-flex u-align-items-center u-border-0">
+                  <div class="header-left-profile header-left-profile-small">
+                    <div class="header-left-profile-image header-left-profile-image-small">
+                      <img src="assets/image/user.png" onload="show_image(this)" />
+                    </div>
+                    <div class="header-left-profile-short-name u-d-none">
+                      <span>ع</span>
+                      <span>م</span>
+                    </div>
+                    <div>
+                      <input type="hidden" name="current-user-id" value="1" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="list-details-footer-chat-input">
+                <input type="text" class="u-border-0" placeholder="سوال بپرسید یا وضعیت جدید ارسال نمایید..." />
+                <span class="u-span-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-at btn-svg" viewBox="0 0 16 16">
+                    <path
+                      d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"
+                    />
+                  </svg>
+                </span>
+                <span class="u-span-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-emoji-smile btn-svg" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                      d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <div class="list-details-footer-sub">
+              <div class="list-details-footer-sub-coworker">
+                <div>
+                  <span style="font-size: 1.2rem; margin-left: 1.5rem">همکاران</span>
+                </div>
+                <div class="list-item-user u-d-flex u-align-items-center u-border-0">
+                  <div class="header-left-profile header-left-profile-small">
+                    <div class="header-left-profile-image header-left-profile-image-small">
+                      <img src="assets/image/user.png" onload="show_image(this)" />
+                    </div>
+                    <div class="header-left-profile-short-name u-d-none">
+                      <span>ع</span>
+                      <span>م</span>
+                    </div>
+                    <div>
+                      <input type="hidden" name="current-user-id" value="1" />
+                    </div>
+                  </div>
+                </div>
+                <div class="list-item-user u-d-flex u-align-items-center u-border-0">
+                  <div class="header-left-profile header-left-profile-small">
+                    <div class="header-left-profile-image header-left-profile-image-small">
+                      <img src="assets/image/user.png" onload="show_image(this)" />
+                    </div>
+                    <div class="header-left-profile-short-name u-d-none">
+                      <span>ع</span>
+                      <span>م</span>
+                    </div>
+                    <div>
+                      <input type="hidden" name="current-user-id" value="1" />
+                    </div>
+                  </div>
+                </div>
+                <div style="position: relative; border: 1px dashed #928f8f; border-radius: 50%; padding: 10px; border: 1px dashed #928f8f; border-radius: 50%; width: 3rem; height: 3rem">
+                  <span class="u-span-icon" style="position: absolute; margin: 0 auto; left: 0; top: 0; right: 0; bottom: 0; text-align: center; transform: translateY(5px)">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person btn-svg" viewBox="0 0 16 16">
+                      <path
+                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div>
+                  <span class="u-span-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x btn-svg" style="transform: rotate(45deg); margin-top: 0.2rem" viewBox="0 0 16 16">
+                      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="list-details-footer-sub-remove">
+                <span class="u-span-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bell-fill btn-svg" viewBox="0 0 16 16">
+                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                  </svg>
+                </span>
+                <span>جدا شدن از کار</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
+    </div>
+
+    <footer class="footer">فوتر سایت</footer>
+
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>

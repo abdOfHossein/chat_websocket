@@ -1,0 +1,27 @@
+[class^='icon-'],
+[class*=' icon-'] {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  stroke-width: 0;
+}
+
+/* ==========================================
+  Single-colored icons can be modified like so:
+  .icon-name {
+    font-size: 32px;
+    color: red;
+  }
+  ========================================== */
+
+.icon-star {
+  width: 1.0498046875em;
+}
+
+.icon-color-primary {
+  fill: $color-gray-light !important;
+}
+
+.icon-color-gary-heavy {
+  fill: $color-gray-primary !important;
+}

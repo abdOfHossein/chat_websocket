@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>گالری</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body dir="rtl">
+    <header class="header">
+      <div class="header-right">
+        <button class="header-menu-btn"></button>
+        <div class="header-logo">
+          <img src="assets/image/logo.png" alt="Logo" class="logo" />
+        </div>
+        <div class="header-other">
+          <div class="header-project-control">
+            <div class="header-project-name">جادو</div>
+            <div class="header-project-more-menu">
+              <img src="assets/image/icons/down-arrow.png" width="20px" alt="" />
+            </div>
+            <div class="header-project-star">
+              <img class="header-project-star-image" src="assets/image/icons/star.png" style="width: 1.7rem" />
+            </div>
+          </div>
+          <div class="header-tab-menu">
+            <div class="header-tab-menu-item">
+              <span>لیست</span>
+            </div>
+            <div class="header-tab-menu-item">
+              <span>بردها</span>
+            </div>
+            <div class="header-tab-menu-item">
+              <span>خط زمانی</span>
+            </div>
+            <div class="header-tab-menu-item">
+              <span>تقویم</span>
+            </div>
+            <div class="header-tab-menu-item">
+              <span>فایل ها</span>
+            </div>
+            <div class="header-tab-menu-item">
+              <span>پیام ها</span>
+            </div>
+            <div class="header-tab-menu-item">
+              <span>رخداد ها</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-left">
+        <div class="header-left-profile">
+          <div class="header-left-profile-image">
+            <img src="assets/image/user.png" />
+          </div>
+          <div class="header-left-profile-short-name u-d-none">
+            <span>ع</span>
+            <span>م</span>
+          </div>
+          <div>
+            <input type="hidden" name="current-user-id" value="1" />
+          </div>
+        </div>
+        <div class="header-left-search">
+          <div class="header-left-search-icon"></div>
+          <input class="header-left-search-input u-border-0 u-outline-0" onfocus="this.placeholder=''" onblur="this.placeholder='جستجو'" placeholder="جستجو" />
+        </div>
+        <div class="header-left-splitter"></div>
+        <div class="header-left-add-new-person">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-people-fill" viewBox="0 0 16 16">
+            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+            <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"></path>
+            <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"></path>
+          </svg>
+          <span class="header-left-add-new-person-title">افزودن</span>
+        </div>
+        <div class="header-left-members">
+          <div class="header-left-members-item">
+            <div class="header-left-profile-image">
+              <img src="assets/image/user.png" />
+            </div>
+            <div class="header-left-profile-short-name u-d-none">
+              <span>ع</span>
+              <span>م</span>
+            </div>
+            <div>
+              <input type="hidden" name="current-user-id" value="1" />
+            </div>
+          </div>
+          <div class="header-left-members-item">
+            <div class="header-left-profile-image">
+              <img src="assets/image/user.png" />
+            </div>
+            <div class="header-left-profile-short-name u-d-none">
+              <span>ع</span>
+              <span>م</span>
+            </div>
+            <div>
+              <input type="hidden" name="current-user-id" value="1" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main role="main">
+      <div class="gallery">
+        <div class="gallery-type filterizr-filter">
+          <button class="btn gallery-type-btn filtr-active" data-filter="all">
+            <span class="gallery-type-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-border-all" viewBox="0 0 16 16">
+                <path d="M0 0h16v16H0V0zm1 1v6.5h6.5V1H1zm7.5 0v6.5H15V1H8.5zM15 8.5H8.5V15H15V8.5zM7.5 15V8.5H1V15h6.5z" />
+              </svg>
+            </span>
+            <span class="gallery-type-name">همه</span>
+          </button>
+          <button class="btn gallery-type-btn" data-filter="1">
+            <span class="gallery-type-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+                <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z" />
+              </svg>
+            </span>
+            <span class="gallery-type-name">تصویر</span>
+          </button>
+          <button class="btn gallery-type-btn" data-filter="2">
+            <span class="gallery-type-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-camera-video" viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5zm11.5 5.175l3.5 1.556V4.269l-3.5 1.556v4.35zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H2z"
+                />
+              </svg>
+            </span>
+            <span class="gallery-type-name">ویدیو</span>
+          </button>
+          <button class="btn gallery-type-btn" data-filter="3">
+            <span class="gallery-type-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-headphones" viewBox="0 0 16 16">
+                <path d="M8 3a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a6 6 0 1 1 12 0v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1V8a5 5 0 0 0-5-5z" />
+              </svg>
+            </span>
+            <span class="gallery-type-name">صدا</span>
+          </button>
+          <button class="btn gallery-type-btn" data-filter="4">
+            <span class="gallery-type-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+                <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
+                <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
+              </svg>
+            </span>
+            <span class="gallery-type-name">سند</span>
+          </button>
+          <button class="btn gallery-type-btn" data-filter="5">
+            <span class="gallery-type-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark" viewBox="0 0 16 16">
+                <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z" />
+              </svg>
+            </span>
+            <span class="gallery-type-name">دیگر</span>
+          </button>
+        </div>
+
+        <div class="gallery-control">
+          <div class="gallery-control-time filterizr-sorting">
+            <span style="display: none">
+              <select data-sortOrder>
+                <option value="title">Title</option>
+              </select>
+            </span>
+            <span class="old filtr-active" data-sortAsc>قدیمی‌ترین</span>
+            <span class="new" data-sortDesc>جدید‌ترین</span>
+          </div>
+          <div class="gallery-control-search">
+            <div>
+              <input type="text" name="search" placeholder="جست‌وجو..." data-search autocomplete="off" />
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-items filtr-container">
+          <div class="gallery-item filtr-item" data-category="1" data-title="8363710">
+            <div class="gallery-item-image">
+              <img src="assets/image/Capture.png" alt="" />
+            </div>
+            <div‌ class="gallery-item-name-size">
+              <span class="gallery-item-name">salam.jpeg</span>
+              <span class="gallery-item-size">127k</span>
+            </div‌>
+            <div class="gallery-item-meta">
+              <div class="gallery-item-user">
+                <img src="assets/image/user.png" alt="" />
+              </div>
+              <div class="gallery-item-date-time">
+                <span class="day">12</span>
+                <span class="month">آبان</span>
+                <span class="time">18:53</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item filtr-item" data-category="1" data-title="3833995">
+            <div class="gallery-item-image">
+              <img src="assets/image/Capture.png" alt="" />
+            </div>
+            <div‌ class="gallery-item-name-size">
+              <span class="gallery-item-name">image.jpeg</span>
+              <span class="gallery-item-size">127k</span>
+            </div‌>
+            <div class="gallery-item-meta">
+              <div class="gallery-item-user">
+                <img src="assets/image/user.png" alt="" />
+              </div>
+              <div class="gallery-item-date-time">
+                <span class="day">12</span>
+                <span class="month">آبان</span>
+                <span class="time">18:53</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item filtr-item" data-category="1" data-title="2853114">
+            <div class="gallery-item-image">
+              <img src="assets/image/Capture.png" alt="" />
+            </div>
+            <div‌ class="gallery-item-name-size">
+              <span class="gallery-item-name">image.jpeg</span>
+              <span class="gallery-item-size">127k</span>
+            </div‌>
+            <div class="gallery-item-meta">
+              <div class="gallery-item-user">
+                <img src="assets/image/user.png" alt="" />
+              </div>
+              <div class="gallery-item-date-time">
+                <span class="day">12</span>
+                <span class="month">آبان</span>
+                <span class="time">18:53</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item filtr-item" data-category="1" data-title="2242193">
+            <div class="gallery-item-image">
+              <img src="assets/image/Capture.png" alt="" />
+            </div>
+            <div‌ class="gallery-item-name-size">
+              <span class="gallery-item-name">image.jpeg</span>
+              <span class="gallery-item-size">127k</span>
+            </div‌>
+            <div class="gallery-item-meta">
+              <div class="gallery-item-user">
+                <img src="assets/image/user.png" alt="" />
+              </div>
+              <div class="gallery-item-date-time">
+                <span class="day">12</span>
+                <span class="month">آبان</span>
+                <span class="time">18:53</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item filtr-item" data-category="1" data-title="1567924">
+            <div class="gallery-item-image">
+              <img src="assets/image/Capture.png" alt="" />
+            </div>
+            <div‌ class="gallery-item-name-size">
+              <span class="gallery-item-name">image.jpeg</span>
+              <span class="gallery-item-size">127k</span>
+            </div‌>
+            <div class="gallery-item-meta">
+              <div class="gallery-item-user">
+                <img src="assets/image/user.png" alt="" />
+              </div>
+              <div class="gallery-item-date-time">
+                <span class="day">12</span>
+                <span class="month">آبان</span>
+                <span class="time">18:53</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item filtr-item" data-category="2" data-title="1447395">
+            <div class="gallery-item-image">
+              <img src="assets/image/Capture2.png" alt="" />
+            </div>
+            <div‌ class="gallery-item-name-size">
+              <span class="gallery-item-name">image.jpeg</span>
+              <span class="gallery-item-size">127k</span>
+            </div‌>
+            <div class="gallery-item-meta">
+              <div class="gallery-item-user">
+                <img src="assets/image/user.png" alt="" />
+              </div>
+              <div class="gallery-item-date-time">
+                <span class="day">12</span>
+                <span class="month">آبان</span>
+                <span class="time">18:53</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item filtr-item" data-category="2" data-title="1351305">
+            <div class="gallery-item-image">
+              <img src="assets/image/Capture.png" alt="" />
+            </div>
+            <div‌ class="gallery-item-name-size">
+              <span class="gallery-item-name">image.jpeg</span>
+              <span class="gallery-item-size">127k</span>
+            </div‌>
+            <div class="gallery-item-meta">
+              <div class="gallery-item-user">
+                <img src="assets/image/user.png" alt="" />
+              </div>
+              <div class="gallery-item-date-time">
+                <span class="day">12</span>
+                <span class="month">آبان</span>
+                <span class="time">18:53</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item filtr-item" data-category="3" data-title="1279910">
+            <div class="gallery-item-image">
+              <img src="assets/image/Capture.png" alt="" />
+            </div>
+            <div‌ class="gallery-item-name-size">
+              <span class="gallery-item-name">image.jpeg</span>
+              <span class="gallery-item-size">127k</span>
+            </div‌>
+            <div class="gallery-item-meta">
+              <div class="gallery-item-user">
+                <img src="assets/image/user.png" alt="" />
+              </div>
+              <div class="gallery-item-date-time">
+                <span class="day">12</span>
+                <span class="month">آبان</span>
+                <span class="time">18:53</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item filtr-item" data-category="4" data-title="1279329">
+            <div class="gallery-item-image">
+              <img src="assets/image/Capture.png" alt="" />
+            </div>
+            <div‌ class="gallery-item-name-size">
+              <span class="gallery-item-name">image.jpeg</span>
+              <span class="gallery-item-size">127k</span>
+            </div‌>
+            <div class="gallery-item-meta">
+              <div class="gallery-item-user">
+                <img src="assets/image/user.png" alt="" />
+              </div>
+              <div class="gallery-item-date-time">
+                <span class="day">12</span>
+                <span class="month">آبان</span>
+                <span class="time">18:53</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item filtr-item" data-category="4" data-title="948279">
+            <div class="gallery-item-image">
+              <img src="assets/image/Capture.png" alt="" />
+            </div>
+            <div‌ class="gallery-item-name-size">
+              <span class="gallery-item-name">image.jpeg</span>
+              <span class="gallery-item-size">127k</span>
+            </div‌>
+            <div class="gallery-item-meta">
+              <div class="gallery-item-user">
+                <img src="assets/image/user.png" alt="" />
+              </div>
+              <div class="gallery-item-date-time">
+                <span class="day">12</span>
+                <span class="month">آبان</span>
+                <span class="time">18:53</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item filtr-item" data-category="4" data-title="918279">
+            <div class="gallery-item-image">
+              <img src="assets/image/Capture5.png" alt="" />
+            </div>
+            <div‌ class="gallery-item-name-size">
+              <span class="gallery-item-name">image.jpeg</span>
+              <span class="gallery-item-size">127k</span>
+            </div‌>
+            <div class="gallery-item-meta">
+              <div class="gallery-item-user">
+                <img src="assets/image/user.png" alt="" />
+              </div>
+              <div class="gallery-item-date-time">
+                <span class="day">12</span>
+                <span class="month">آبان</span>
+                <span class="time">18:53</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item filtr-item" data-category="4" data-title="1259910">
+            <div class="gallery-item-image">
+              <img src="assets/image/Capture4.png" alt="" />
+            </div>
+            <div‌ class="gallery-item-name-size">
+              <span class="gallery-item-name">image.jpeg</span>
+              <span class="gallery-item-size">127k</span>
+            </div‌>
+            <div class="gallery-item-meta">
+              <div class="gallery-item-user">
+                <img src="assets/image/user.png" alt="" />
+              </div>
+              <div class="gallery-item-date-time">
+                <span class="day">12</span>
+                <span class="month">آبان</span>
+                <span class="time">18:53</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item filtr-item" data-category="4" data-title="1391305">
+            <div class="gallery-item-image">
+              <img src="assets/image/Capture.png" alt="" />
+            </div>
+            <div‌ class="gallery-item-name-size">
+              <span class="gallery-item-name">image.jpeg</span>
+              <span class="gallery-item-size">127k</span>
+            </div‌>
+            <div class="gallery-item-meta">
+              <div class="gallery-item-user">
+                <img src="assets/image/user.png" alt="" />
+              </div>
+              <div class="gallery-item-date-time">
+                <span class="day">12</span>
+                <span class="month">آبان</span>
+                <span class="time">18:53</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item filtr-item" data-category="4" data-title="1547395">
+            <div class="gallery-item-image">
+              <img src="assets/image/Capture3.png" alt="" />
+            </div>
+            <div‌ class="gallery-item-name-size">
+              <span class="gallery-item-name">image.jpeg</span>
+              <span class="gallery-item-size">127k</span>
+            </div‌>
+            <div class="gallery-item-meta">
+              <div class="gallery-item-user">
+                <img src="assets/image/user.png" alt="" />
+              </div>
+              <div class="gallery-item-date-time">
+                <span class="day">12</span>
+                <span class="month">آبان</span>
+                <span class="time">18:53</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item filtr-item" data-category="4" data-title="2449395">
+            <div class="gallery-item-image">
+              <img src="assets/image/Capture.png" alt="" />
+            </div>
+            <div‌ class="gallery-item-name-size">
+              <span class="gallery-item-name">image.jpeg</span>
+              <span class="gallery-item-size">127k</span>
+            </div‌>
+            <div class="gallery-item-meta">
+              <div class="gallery-item-user">
+                <img src="assets/image/user.png" alt="" />
+              </div>
+              <div class="gallery-item-date-time">
+                <span class="day">12</span>
+                <span class="month">آبان</span>
+                <span class="time">18:53</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item filtr-item" data-category="5" data-title="1467924">
+            <div class="gallery-item-image">
+              <img src="assets/image/Capture.png" alt="" />
+            </div>
+            <div‌ class="gallery-item-name-size">
+              <span class="gallery-item-name">image.jpeg</span>
+              <span class="gallery-item-size">127k</span>
+            </div‌>
+            <div class="gallery-item-meta">
+              <div class="gallery-item-user">
+                <img src="assets/image/user.png" alt="" />
+              </div>
+              <div class="gallery-item-date-time">
+                <span class="day">12</span>
+                <span class="month">آبان</span>
+                <span class="time">18:53</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item filtr-item" data-category="5" data-title="1167924">
+            <div class="gallery-item-image">
+              <img src="assets/image/Capture.png" alt="" />
+            </div>
+            <div‌ class="gallery-item-name-size">
+              <span class="gallery-item-name">image.jpeg</span>
+              <span class="gallery-item-size">127k</span>
+            </div‌>
+            <div class="gallery-item-meta">
+              <div class="gallery-item-user">
+                <img src="assets/image/user.png" alt="" />
+              </div>
+              <div class="gallery-item-date-time">
+                <span class="day">12</span>
+                <span class="month">آبان</span>
+                <span class="time">18:53</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item filtr-item" data-category="5" data-title="1967924">
+            <div class="gallery-item-image">
+              <img src="assets/image/Capture2.png" alt="" />
+            </div>
+            <div‌ class="gallery-item-name-size">
+              <span class="gallery-item-name">image.jpeg</span>
+              <span class="gallery-item-size">127k</span>
+            </div‌>
+            <div class="gallery-item-meta">
+              <div class="gallery-item-user">
+                <img src="assets/image/user.png" alt="" />
+              </div>
+              <div class="gallery-item-date-time">
+                <span class="day">12</span>
+                <span class="month">آبان</span>
+                <span class="time">18:53</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item filtr-item" data-category="5" data-title="2842193">
+            <div class="gallery-item-image">
+              <img src="assets/image/Capture5.png" alt="" />
+            </div>
+            <div‌ class="gallery-item-name-size">
+              <span class="gallery-item-name">image.jpeg</span>
+              <span class="gallery-item-size">127k</span>
+            </div‌>
+            <div class="gallery-item-meta">
+              <div class="gallery-item-user">
+                <img src="assets/image/user.png" alt="" />
+              </div>
+              <div class="gallery-item-date-time">
+                <span class="day">12</span>
+                <span class="month">آبان</span>
+                <span class="time">18:53</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer"></footer>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/sortablejs/Sortable.min.js"></script>
+    <script src="node_modules/filterizr/dist/jquery.filterizr.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('.list-items-header').click(function () {
+          $(this).next().slideToggle('slow');
+          $(this).children('.list-items-header-icon').toggleClass('u-rotate90');
+        });
+      });
+    </script>
+    <script>
+      function openNav() {
+        document.getElementById('sidebar').style.width = '50%';
+      }
+
+      function closeNav() {
+        document.getElementById('sidebar').style.width = '0';
+      }
+
+      $(document).ready(function () {
+        $('.filterizr-filter button').click(function () {
+          $('.filterizr-filter button').removeClass('filtr-active');
+          $(this).addClass('filtr-active');
+        });
+        $('.filterizr-sorting button').click(function () {
+          $('.filterizr-sorting button').removeClass('filtr-active');
+          $(this).addClass('filtr-active');
+        });
+
+        var filterizd = $('.filtr-container').filterizr();
+        filterizd.filterizr('sort', 'title', 'asc');
+      });
+    </script>
+  </body>
+</html>

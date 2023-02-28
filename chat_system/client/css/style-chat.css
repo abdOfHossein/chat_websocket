@@ -1,5 +1,5 @@
 .counteiner {
-  width: 600px;
+  width: 900px;
   height: 600px;
   margin: 150px auto 0;
   border: 3px solid rgb(87, 85, 85);
@@ -18,10 +18,30 @@
 .content-all-msg {
   width: 97%;
   height: 470px;
-  overflow: auto;
   background-color: white;
   margin: 10px;
   border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.content-users{
+  width: 32%;
+  height: 100%;
+  border-radius: 5px;
+  overflow: auto;
+}
+.seperator{
+  width: 2px;
+  height: 100%;
+  background-color: gold;
+}
+.content-messages{
+  border-radius: 5px;
+  width: 65%;
+  height: 100%;
+  overflow: auto;
+
 }
 .content-input-btn-msg{
   width: 100%;
@@ -31,7 +51,7 @@
   align-items: center;
 }
 .content-input-msg {
-  width: 500px;
+  width: 800px;
   height: 100px;
   margin: 7px;
 
@@ -72,11 +92,30 @@
   z-index: -1;
 }
 body {
-  background-image: url('nody-عکس-پس-زمینه-صفحه-چت-تلگرام-1633956626.jpg');
+  background-image: url('../img/nody-عکس-پس-زمینه-صفحه-چت-تلگرام-1633956626.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.message {
+.users{
   list-style-type: none;
+
+}
+.messages {
+  list-style-type: none;
+}
+
+.user-li{
+  width: 250px;
+  height: 60px;
+  margin: 5px 0;
+  background-color:rgb(233, 221, 221);
+  border-radius: 5px;
+}
+.messages-li{
+
+  width: 500px;
+  height: 60px;
+  margin: 5px 0;
+  background-color:rgb(233, 221, 221);
+  border-radius: 5px;
 }

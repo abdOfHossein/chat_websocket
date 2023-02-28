@@ -1,0 +1,29 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    transition: all 0.2s;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color: $color-gray4;
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  &-svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-left: 0.5rem;
+    fill: $color-gray5;
+  }
+}

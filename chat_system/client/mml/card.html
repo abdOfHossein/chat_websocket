@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لیست کارتی</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body dir="rtl">
+    <header class="header">
+      <div class="header-right">
+        <button class="header-menu-btn"></button>
+
+        <div class="header-logo-box">
+          <img src="assets/image/logo.png" alt="Logo" class="logo" />
+        </div>
+        <div class="header-other">
+          <div class="header-project-control">
+            <div class="header-project-name">جادو</div>
+            <div class="header-project-more-menu">
+              <img src="assets/image/icons/down-arrow.png" style="width: 1.7rem" />
+            </div>
+            <div class="header-project-star">
+              <img class="header-project-star-image" src="assets/image/icons/star.png" style="width: 1.7rem" />
+            </div>
+          </div>
+          <div class="header-tab-menu">
+            <div class="header-tab-menu-item">
+              <span>لیست</span>
+            </div>
+            <div class="header-tab-menu-item">
+              <span>بردها</span>
+            </div>
+            <div class="header-tab-menu-item">
+              <span>خط زمانی</span>
+            </div>
+            <div class="header-tab-menu-item">
+              <span>تقویم</span>
+            </div>
+            <div class="header-tab-menu-item">
+              <span>فایل ها</span>
+            </div>
+            <div class="header-tab-menu-item">
+              <span>پیام ها</span>
+            </div>
+            <div class="header-tab-menu-item">
+              <span>رخداد ها</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-left">
+        <div class="header-left-profile">
+          <div class="header-left-profile-image">
+            <img src="assets/image/user.png" onload="show_image(this)" />
+          </div>
+          <div class="header-left-profile-short-name u-d-none">
+            <span>ع</span>
+            <span>م</span>
+          </div>
+          <div>
+            <input type="hidden" name="current-user-id" value="1" />
+          </div>
+        </div>
+        <div class="header-left-search">
+          <div class="header-left-search-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+            </svg>
+          </div>
+          <input class="header-left-search-input u-border-0 u-outline-0" onfocus="this.placeholder=''" onblur="this.placeholder='جستجو'" placeholder="جستجو" />
+        </div>
+        <div class="header-left-splitter"></div>
+        <div class="header-left-add-new-person">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+            <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"></path>
+            <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"></path>
+          </svg>
+          <span class="header-left-add-new-person-title">افزودن</span>
+        </div>
+        <div class="header-left-members">
+          <div class="header-left-members-item">
+            <div class="header-left-profile-image">
+              <img src="assets/image/user.png" onload="show_image(this)" />
+            </div>
+            <div class="header-left-profile-short-name u-d-none">
+              <span>ع</span>
+              <span>م</span>
+            </div>
+            <div>
+              <input type="hidden" name="current-user-id" value="1" />
+            </div>
+          </div>
+
+          <div class="header-left-members-item">
+            <div class="header-left-profile-image">
+              <img src="assets/image/user.png" onload="show_image(this)" />
+            </div>
+            <div class="header-left-profile-short-name u-d-none">
+              <span>ع</span>
+              <span>م</span>
+            </div>
+            <div>
+              <input type="hidden" name="current-user-id" value="1" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+      <div class="card-container">
+        <div class="row">
+          <div class="col-1-of-4">
+            <div class="head">
+              <div style="font-size: 1.3rem">در حال انجام</div>
+              <div style="margin-bottom: -11px">
+                <span class="list-item-add-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x btn-svg" style="transform: rotate(45deg); margin-right: 0.2rem" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                  </svg>
+                </span>
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-star btn-svg" viewBox="0 0 16 16">
+                    <path
+                      d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <span class="card-header-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check-circle btn-svg" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                    <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"></path>
+                  </svg>
+                </span>
+                <h3 class="card-header-title">هماهنگی اتاق جلسات</h3>
+              </div>
+              <div class="card-body">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tag-fill" viewBox="0 0 16 16">
+                    <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                  </svg>
+                </span>
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="fill: #ffa800" class="bi bi-tag-fill" viewBox="0 0 16 16">
+                    <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                  </svg>
+                </span>
+              </div>
+              <div class="card-footer">
+                <div class="card-footer-user">
+                  <img class="card-user-image" src="assets/image/user.png" alt="" />
+                  <span class="card-day">فردا</span>
+                </div>
+                <div class="card-footer-icons">
+                  <div class="chat">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">13</span>
+                  </div>
+                  <div class="sub-item">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">3</span>
+                  </div>
+                  <div class="sub-item">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">3</span>
+                  </div>
+                  <div class="chat" style="margin-right: -8px; margin-top: 1px">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-left-fill btn-svg" viewBox="0 0 16 16">
+                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <span class="card-header-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check-circle btn-svg" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                    <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"></path>
+                  </svg>
+                </span>
+                <h3 class="card-header-title">هماهنگی اتاق جلسات</h3>
+              </div>
+              <div class="card-body">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tag-fill" viewBox="0 0 16 16">
+                    <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                  </svg>
+                </span>
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="fill: #ffa800" class="bi bi-tag-fill" viewBox="0 0 16 16">
+                    <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                  </svg>
+                </span>
+              </div>
+              <div class="card-footer">
+                <div class="card-footer-user">
+                  <img class="card-user-image" src="assets/image/user.png" alt="" />
+                  <span class="card-day">فردا</span>
+                </div>
+                <div class="card-footer-icons">
+                  <div class="chat">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">13</span>
+                  </div>
+                  <div class="sub-item">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">3</span>
+                  </div>
+                  <div class="sub-item">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">3</span>
+                  </div>
+                  <div class="chat" style="margin-right: -8px; margin-top: 1px">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-left-fill btn-svg" viewBox="0 0 16 16">
+                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <span class="card-header-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check-circle btn-svg" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                    <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"></path>
+                  </svg>
+                </span>
+                <h3 class="card-header-title">هماهنگی اتاق جلسات</h3>
+              </div>
+              <div class="card-body">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tag-fill" viewBox="0 0 16 16">
+                    <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                  </svg>
+                </span>
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="fill: #ffa800" class="bi bi-tag-fill" viewBox="0 0 16 16">
+                    <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                  </svg>
+                </span>
+              </div>
+              <div class="card-footer">
+                <div class="card-footer-user">
+                  <img class="card-user-image" src="assets/image/user.png" alt="" />
+                  <span class="card-day">فردا</span>
+                </div>
+                <div class="card-footer-icons">
+                  <div class="chat">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">13</span>
+                  </div>
+                  <div class="sub-item">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">3</span>
+                  </div>
+                  <div class="sub-item">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">3</span>
+                  </div>
+                  <div class="chat" style="margin-right: -8px; margin-top: 1px">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-left-fill btn-svg" viewBox="0 0 16 16">
+                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="head" style="margin-top: 2rem">
+              <div style="font-size: 1rem; display: flex; justify-content: center; flex-grow: 1; color: #8d8d8e">
+                <span class="list-item-add-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x btn-svg" style="transform: rotate(45deg); margin-right: 0.2rem" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                  </svg>
+                </span>
+                <span>اضافه کردن کار</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-1-of-4">
+            <div class="head">
+              <div style="font-size: 1.3rem">در حال انجام</div>
+              <div style="margin-bottom: -11px">
+                <span class="list-item-add-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x btn-svg" style="transform: rotate(45deg); margin-right: 0.2rem" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                  </svg>
+                </span>
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-star btn-svg" viewBox="0 0 16 16">
+                    <path
+                      d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <span class="card-header-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check-circle btn-svg" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                    <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"></path>
+                  </svg>
+                </span>
+                <h3 class="card-header-title">هماهنگی اتاق جلسات</h3>
+              </div>
+              <div class="card-body">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tag-fill" viewBox="0 0 16 16">
+                    <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                  </svg>
+                </span>
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="fill: #ffa800" class="bi bi-tag-fill" viewBox="0 0 16 16">
+                    <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                  </svg>
+                </span>
+              </div>
+              <div class="card-footer">
+                <div class="card-footer-user">
+                  <img class="card-user-image" src="assets/image/user.png" alt="" />
+                  <span class="card-day">فردا</span>
+                </div>
+                <div class="card-footer-icons">
+                  <div class="chat">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">13</span>
+                  </div>
+                  <div class="sub-item">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">3</span>
+                  </div>
+                  <div class="sub-item">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">3</span>
+                  </div>
+                  <div class="chat" style="margin-right: -8px; margin-top: 1px">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-left-fill btn-svg" viewBox="0 0 16 16">
+                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="head" style="margin-top: 2rem">
+              <div style="font-size: 1rem; display: flex; justify-content: center; flex-grow: 1; color: #8d8d8e">
+                <span class="list-item-add-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x btn-svg" style="transform: rotate(45deg); margin-right: 0.2rem" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                  </svg>
+                </span>
+                <span>اضافه کردن کار</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-1-of-4">
+            <div class="head">
+              <div style="font-size: 1.3rem">در حال انجام</div>
+              <div style="margin-bottom: -11px">
+                <span class="list-item-add-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x btn-svg" style="transform: rotate(45deg); margin-right: 0.2rem" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                  </svg>
+                </span>
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-star btn-svg" viewBox="0 0 16 16">
+                    <path
+                      d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <span class="card-header-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check-circle btn-svg" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                    <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"></path>
+                  </svg>
+                </span>
+                <h3 class="card-header-title">هماهنگی اتاق جلسات</h3>
+              </div>
+              <div class="card-body">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tag-fill" viewBox="0 0 16 16">
+                    <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                  </svg>
+                </span>
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="fill: #ffa800" class="bi bi-tag-fill" viewBox="0 0 16 16">
+                    <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                  </svg>
+                </span>
+              </div>
+              <div class="card-footer">
+                <div class="card-footer-user">
+                  <img class="card-user-image" src="assets/image/user.png" alt="" />
+                  <span class="card-day">فردا</span>
+                </div>
+                <div class="card-footer-icons">
+                  <div class="chat">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">13</span>
+                  </div>
+                  <div class="sub-item">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">3</span>
+                  </div>
+                  <div class="sub-item">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">3</span>
+                  </div>
+                  <div class="chat" style="margin-right: -8px; margin-top: 1px">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-left-fill btn-svg" viewBox="0 0 16 16">
+                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <span class="card-header-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check-circle btn-svg" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                    <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"></path>
+                  </svg>
+                </span>
+                <h3 class="card-header-title">هماهنگی اتاق جلسات</h3>
+              </div>
+              <div class="card-body"></div>
+              <div class="card-footer">
+                <div class="card-footer-user">
+                  <img class="card-user-image" src="assets/image/user.png" alt="" />
+                  <span class="card-day">فردا</span>
+                </div>
+                <div class="card-footer-icons">
+                  <div class="chat">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">13</span>
+                  </div>
+                  <div class="sub-item">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">3</span>
+                  </div>
+                  <div class="sub-item">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">3</span>
+                  </div>
+                  <div class="chat" style="margin-right: -8px; margin-top: 1px">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-left-fill btn-svg" viewBox="0 0 16 16">
+                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <span class="card-header-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check-circle btn-svg" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                    <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"></path>
+                  </svg>
+                </span>
+                <h3 class="card-header-title">هماهنگی اتاق جلسات</h3>
+              </div>
+              <div class="card-body">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tag-fill" viewBox="0 0 16 16">
+                    <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                  </svg>
+                </span>
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="fill: #ffa800" class="bi bi-tag-fill" viewBox="0 0 16 16">
+                    <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                  </svg>
+                </span>
+              </div>
+              <div class="card-footer">
+                <div class="card-footer-user">
+                  <img class="card-user-image" src="assets/image/user.png" alt="" />
+                  <span class="card-day">فردا</span>
+                </div>
+                <div class="card-footer-icons">
+                  <div class="chat">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">13</span>
+                  </div>
+                  <div class="sub-item">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">3</span>
+                  </div>
+                  <div class="sub-item">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat btn-svg" viewBox="0 0 16 16">
+                        <path
+                          d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="card-footer-icons-number">3</span>
+                  </div>
+                  <div class="chat" style="margin-right: -8px; margin-top: 1px">
+                    <span class="chat-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-left-fill btn-svg" viewBox="0 0 16 16">
+                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="head" style="margin-top: 2rem">
+              <div style="font-size: 1rem; display: flex; justify-content: center; flex-grow: 1; color: #8d8d8e">
+                <span class="list-item-add-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x btn-svg" style="transform: rotate(45deg); margin-right: 0.2rem" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                  </svg>
+                </span>
+                <span>اضافه کردن کار</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-1-of-4">
+            <div class="head">
+              <div style="font-size: 1.3rem">آماده کردن محتوای جلسه</div>
+              <div style="margin-bottom: -11px">
+                <span class="list-item-add-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x btn-svg" style="transform: rotate(45deg); margin-right: 0.2rem" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                  </svg>
+                </span>
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-star btn-svg" viewBox="0 0 16 16">
+                    <path
+                      d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div style="background-color: #eff2f4; border-radius: 0.5rem; border: 1px solid #e6e6e6; min-height: 400px; margin: 1rem;">
+              <div class="head" style="margin-top: 2rem">
+                <div style="font-size: 1rem; display: flex; justify-content: center; flex-grow: 1; color: #8d8d8e">
+                  <span class="list-item-add-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x btn-svg" style="transform: rotate(45deg); margin-right: 0.2rem" viewBox="0 0 16 16">
+                      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                    </svg>
+                  </span>
+                  <span>اضافه کردن کار</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>

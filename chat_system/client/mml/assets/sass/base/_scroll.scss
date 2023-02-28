@@ -1,0 +1,13 @@
+.messages,
+.events {
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+        background-color: #fff;
+    }
+    ::-webkit-scrollbar-thumb {
+        width: 5px;
+        height: 5px;
+        background-color: #e0e0e0;
+    }
+}

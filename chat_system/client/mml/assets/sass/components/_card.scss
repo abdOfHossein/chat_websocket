@@ -1,0 +1,66 @@
+.card-container {
+  background-color: $color-gray7;
+  padding: 1rem;
+}
+.card {
+  background-color: $color-white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 0.7rem;
+  padding: 1.5rem 1.7rem 1rem;
+  margin: 1rem;
+  &-header {
+    display: flex;
+    align-items: center;
+    &-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    &-title {
+      font-weight: 500;
+      color: $color-gray4;
+      margin-right: 0.6rem;
+    }
+  }
+
+  &-body {
+    margin: 1.5rem 0;
+    svg {
+      transform: rotate(90deg);
+      fill: #8d8d8e;
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-user {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &-icons {
+      display: flex;
+      & > *:not(:last-child) {
+        margin-left: 1.2rem;
+        position: relative;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+      }
+      &-number {
+        position: absolute;
+        top: -0.3rem;
+        right: -1rem;
+      }
+    }
+  }
+
+  &-user-image {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin-left: 1.2rem;
+  }
+}

@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chat</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="./style-chat.css" />
+    <link rel="stylesheet" href="../css/style-chat.css" />
   </head>
   <body>
     <div class="counteiner">
       <div class="content-all-msg">
-        <ul class="message" id="messages"></ul>
+        <div class="content-messages">
+          <ul class="messages" id="messages"></ul>
+        </div>
+        <div class="seperator"></div>
+        <div class="content-users">
+          <ul class="users" id="users"></ul>
+        </div>
       </div>
       <div class="content-input-btn-msg">
         <div class="content-input-msg">
@@ -25,5 +31,5 @@
     </div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
-  <script src="./chat.js"></script>
+  <script src="../js/chat.js"></script>
 </html>

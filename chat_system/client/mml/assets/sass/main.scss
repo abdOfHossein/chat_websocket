@@ -1,0 +1,28 @@
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+@import 'base/animations';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
+@import 'base/icons';
+@import 'base/scroll';
+
+@import 'components/button';
+@import 'components/card';
+@import 'components/sidebar-collpase';
+
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/grid';
+@import 'layout/navigation';
+
+@import 'pages/list';
+@import 'pages/calendar';
+@import 'pages/messages';
+@import 'pages/events';
+@import 'pages/card';
+// <<<<<<< HEAD
+@import 'pages/gallery';
+// =======
+// >>>>>>> 5fa49bc7c698eb578e5de00982ef1d29ed40286f
